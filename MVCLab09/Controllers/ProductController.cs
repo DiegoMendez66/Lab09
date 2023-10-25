@@ -89,13 +89,13 @@ namespace MVCLab09.Controllers
         // GET: ProductController/Delete/5
         public ActionResult Delete(int id)
         {
-            BProduct bProduct = new BProduct();
-            Product product = bProduct.GetById(id);
+            BProduct business = new BProduct();
+            Product product = business.GetById(id);
             ProductModel productModel = new ProductModel
             {
                 Id = product.Product_id,
                 Name = product.Name,
-                Price = product.Price,
+                Price = product.Price
             };
 
             return View(productModel);
@@ -108,7 +108,6 @@ namespace MVCLab09.Controllers
         {
             try
             {
-
                 BProduct business = new BProduct();
                 business.DeleteProduct(id);
 

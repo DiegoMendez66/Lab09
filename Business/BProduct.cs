@@ -18,20 +18,17 @@ namespace Business
             var products = data.Get();
 
             var result= products.Where(x=> x.Name.Contains(Name)).ToList();
-            //lambda
-            //flecha
-            
 
             return result;
         }
 
-        public List<Product> GetById(int Id)
+        public Product GetById(int Id)
         {
 
             DProduct data = new DProduct();
             var products = data.Get();
 
-            var result = products.Where(x =>);
+            var result = products.FirstOrDefault(x => x.Product_id == Id);
 
             return result;
         }
